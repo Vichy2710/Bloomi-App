@@ -1,13 +1,23 @@
 package com.example.bloomi;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
+import androidx.recyclerview.widget.RecyclerView;
 
+import android.text.Editable;
+import android.text.TextUtils;
+import android.text.TextWatcher;
+import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.inputmethod.EditorInfo;
+import android.widget.AbsListView;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -71,11 +81,9 @@ public class FragmentForgotPassword extends Fragment {
             @Override
             public void onFocusChange(View view, boolean b) {
                 f_ForgotPassword_ClearSearch.setVisibility(View.VISIBLE);
-
             }
 
         });
-
         f_ForgotPassword_ClearSearch.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -87,9 +95,31 @@ public class FragmentForgotPassword extends Fragment {
         f_ForgotPassword_Cancel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                getView().setVisibility(View.GONE);
+                Intent intent = new Intent(getActivity(), LogIn.class);
+                startActivity(intent);
             }
         });
+        f_ForgotPassword_enterPhoneOrEmail.setOnEditorActionListener(new TextView.OnEditorActionListener() {
+            @Override
+            public boolean onEditorAction(TextView v, int actionId, KeyEvent event){
+                if(actionId == EditorInfo.IME_ACTION_SEARCH){
+                    FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
+                    fragmentTransaction.add(R.id.fragment_forgotPassword, new FragmentConfirmAccount_ChooseSendingMethod());
+                    fragmentTransaction.commit();
+                    return true;
+                }
+                return false;
+            }
+        });
+//        ImageView searchtest= view.findViewById(R.id.searchtest);
+//        searchtest.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
+//                fragmentTransaction.add(R.id.fragment_forgotPassword, new FragmentConfirmAccount_ChooseSendingMethod());
+//                fragmentTransaction.commit();
+//            }
+//        });
         return view;
     }
 

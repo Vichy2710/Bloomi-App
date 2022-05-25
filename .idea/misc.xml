@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/HIT/ANDROID/BTL/app/src/main/res/drawable/big_button.xml" value="0.26614583333333336" />
+        <entry key="..\:/HIT/ANDROID/BTL/app/src/main/res/drawable/boder_line_top_bot.xml" value="0.26614583333333336" />
+        <entry key="..\:/HIT/ANDROID/BTL/app/src/main/res/drawable/border_line_top_bot_header.xml" value="0.2" />
+        <entry key="..\:/HIT/ANDROID/BTL/app/src/main/res/drawable/border_line_top_bot_rv_account.xml" value="0.26614583333333336" />
+        <entry key="..\:/HIT/ANDROID/BTL/app/src/main/res/drawable/cancel_search_button.xml" value="0.26614583333333336" />
+        <entry key="..\:/HIT/ANDROID/BTL/app/src/main/res/layout/activity_log_in.xml" value="0.18840579710144928" />
+        <entry key="..\:/HIT/ANDROID/BTL/app/src/main/res/layout/activity_main.xml" value="0.1852355072463768" />
+        <entry key="..\:/HIT/ANDROID/BTL/app/src/main/res/layout/dialog_forgot_password.xml" value="0.18840579710144928" />
+        <entry key="..\:/HIT/ANDROID/BTL/app/src/main/res/layout/dialog_forgot_password_enter_code.xml" value="0.25" />
+        <entry key="..\:/HIT/ANDROID/BTL/app/src/main/res/layout/fragment_confirm_account__choose_sending_method.xml" value="0.25" />
+        <entry key="..\:/HIT/ANDROID/BTL/app/src/main/res/layout/fragment_confirm_account__set_password.xml" value="0.25" />
+        <entry key="..\:/HIT/ANDROID/BTL/app/src/main/res/layout/fragment_forgot_password.xml" value="0.18840579710144928" />
+        <entry key="..\:/HIT/ANDROID/BTL/app/src/main/res/layout/fragment_forgot_password__set_password.xml" value="0.2359375" />
+        <entry key="..\:/HIT/ANDROID/BTL/app/src/main/res/layout/re_search_account.xml" value="0.25" />
+        <entry key="..\:/HIT/ANDROID/BTL/app/src/main/res/layout/rv_account_search.xml" value="0.25" />
+        <entry key="..\:/HIT/ANDROID/BTL/app/src/main/res/layout/rv_search_account.xml" value="0.25" />
+      </map>
+    </option>
+  </component>
+  <component name="ExternalStorageConfigurationManager" enabled="true" />
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="11" project-jdk-type="JavaSDK" />
+</project>
