@@ -6,6 +6,7 @@ import androidx.fragment.app.FragmentTransaction;
 import android.app.Dialog;
 import android.app.FragmentManager;
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Rect;
 import android.os.Bundle;
 import android.view.Gravity;
@@ -31,6 +32,15 @@ public class LogIn extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 dialog_forgot_password();
+            }
+        });
+        TextView Login_Login = findViewById(R.id.LogIn_LogIn);
+        Login_Login.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent goToHomeFromLogIn = new Intent(LogIn.this, MainNav.class);
+                startActivity(goToHomeFromLogIn);
+
             }
         });
     }

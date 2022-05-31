@@ -131,7 +131,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layoutDirection="rtl"
-                android:buttonTint="#7f00ff"
+                android:buttonTint="@color/usual_color"
                 />
 
         </LinearLayout>
@@ -176,7 +176,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layoutDirection="rtl"
-                android:buttonTint="#7f00ff"
+                android:buttonTint="@color/usual_color"
                 />
 
         </LinearLayout>
@@ -189,7 +189,7 @@
         android:layout_marginTop="330dp"
         android:layout_width="match_parent"
         android:layout_height="70dp"
-        android:background="@drawable/big_button_purple"
+        android:background="@drawable/big_button_peace"
         android:elevation="10dp"
         >
         >

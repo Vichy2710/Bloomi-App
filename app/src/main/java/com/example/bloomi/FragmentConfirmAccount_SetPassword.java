@@ -1,5 +1,6 @@
 package com.example.bloomi;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -80,6 +81,15 @@ public class FragmentConfirmAccount_SetPassword extends Fragment {
                 FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
                 fragmentTransaction.replace(R.id.fragment_forgotPassword, new FragmentConfirmAccount_ChooseSendingMethod());
                 fragmentTransaction.commit();
+            }
+        });
+        TextView f_ConfirmAccount_LogIn = view.findViewById(R.id.f_ConfirmAccount_LogIn);
+        f_ConfirmAccount_LogIn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent goToHomeFromLogIn = new Intent(getActivity(), MainNav.class);
+                startActivity(goToHomeFromLogIn);
+
             }
         });
         return view;

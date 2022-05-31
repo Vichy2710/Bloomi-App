@@ -3,7 +3,11 @@ package com.example.bloomi;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.LinearGradient;
+import android.graphics.Shader;
 import android.os.Bundle;
+import android.widget.TextView;
 
 import java.util.Timer;
 import java.util.TimerTask;
@@ -24,5 +28,10 @@ public class MainActivity extends AppCompatActivity {
                 finish();
             }
         }, 3000);
+        TextView bloomi = new TextView(this);
+        Shader textShader=new LinearGradient(0, 0, 0, 1,
+                new int[]{Color.parseColor("#D66D75"),Color.parseColor("#FFC3A0")},
+                new float[]{0, 1}, Shader.TileMode.CLAMP);
+        bloomi.getPaint().setShader(textShader);
     }
 }

@@ -111,15 +111,6 @@ public class FragmentForgotPassword extends Fragment {
                 return false;
             }
         });
-//        ImageView searchtest= view.findViewById(R.id.searchtest);
-//        searchtest.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
-//                fragmentTransaction.add(R.id.fragment_forgotPassword, new FragmentConfirmAccount_ChooseSendingMethod());
-//                fragmentTransaction.commit();
-//            }
-//        });
         return view;
     }
 
