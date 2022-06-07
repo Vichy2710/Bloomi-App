@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainNav">
+    tools:context=".MainNav"
+    android:id="@+id/mainNav_layout">
 
     <RelativeLayout
         android:id="@+id/fragmentContainer_main"

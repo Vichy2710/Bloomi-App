@@ -3,12 +3,39 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".FragmentNotification">
-
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    tools:context=".FragmentNotification"
+    android:padding="18dp"
+    android:background="@color/white">
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="53dp">
+
+        <ImageView
+            android:id="@+id/f_noti_backToHome"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_centerVertical="true"
+            android:src="@drawable/arrow_back"></ImageView>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:fontFamily="@font/poppins_medium"
+            android:gravity="center"
+            android:text="Notifications"
+            android:textColor="@color/black"
+            android:textSize="15dp"></TextView>
+
+    </RelativeLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/f_home_rv"
+        android:layout_width="match_parent"
+        android:layout_marginTop="50dp"
+        android:layout_height="wrap_content"
+        android:scrollbars="vertical"></androidx.recyclerview.widget.RecyclerView>
+
+
 
 </FrameLayout>

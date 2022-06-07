@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".FragmentHome"
-    android:background="#f1f4fb">
+    android:background="@color/white">
 
     <!-- TODO: Update blank fragment layout -->
     <RelativeLayout
@@ -18,11 +18,11 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:textColor="@color/usual_color"
-            android:text="Bloomi"
-            android:textSize="25sp"
+            android:fontFamily="@font/fs_playlist"
             android:gravity="left|center_vertical"
-            android:fontFamily="@font/fs_playlist"></TextView>
+            android:text="Bloomi"
+            android:textColor="@color/usual_color"
+            android:textSize="25sp"></TextView>
 
 
         <ImageView
@@ -36,7 +36,7 @@
         </ImageView>
 
         <ImageView
-            android:id="@+id/f_home_message"
+            android:id="@+id/f_home_notification"
             android:layout_width="25dp"
             android:layout_height="25dp"
             android:layout_alignParentEnd="true"
@@ -58,121 +58,32 @@
             android:layout_gravity="center_horizontal"
             android:background="@color/usual_color"></TextView>
     </RelativeLayout>
-    <LinearLayout
-        android:background="@color/white"
-        android:layout_width="match_parent"
-        android:layout_marginTop="44dp"
-        android:layout_height="106dp"
-        android:orientation="vertical"
-        android:weightSum="6">
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="4"
-            android:orientation="horizontal">
-            <de.hdodenhof.circleimageview.CircleImageView
-                android:layout_width="45dp"
-                android:layout_height="45dp"
-                android:layout_gravity="center"
-                android:layout_marginLeft="16dp"
-                android:layout_marginRight="16dp"
-                android:src="@color/black"></de.hdodenhof.circleimageview.CircleImageView>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:text="What's on your mind?"
-                android:textSize="12dp"
-                android:fontFamily="@font/poppins_regular"
-                android:textColor="@color/black"
-                android:gravity="center"></TextView>
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="2"
-            android:orientation="horizontal">
-            <LinearLayout
-                android:gravity="center"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1">
-                <LinearLayout
-                    android:gravity="center"
-                    android:layout_width="97dp"
-                    android:layout_height="23dp"
-                    android:orientation="horizontal"
-                    android:background="@drawable/input_border">
-                    <ImageView
-                        android:layout_width="10dp"
-                        android:layout_height="10dp"
-                        android:src="@drawable/photo_icon"
-                        android:layout_marginRight="5dp"></ImageView>
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Photo"
-                        android:textSize="10dp"
-                        android:fontFamily="@font/poppins_regular"
-                        android:textColor="@color/black"></TextView>
-                </LinearLayout>
-            </LinearLayout>
-            <LinearLayout
-                android:gravity="center"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1">
-                <LinearLayout
-                    android:gravity="center"
-                    android:layout_width="97dp"
-                    android:layout_height="23dp"
-                    android:orientation="horizontal"
-                    android:background="@drawable/input_border">
-                    <ImageView
-                        android:layout_width="10dp"
-                        android:layout_height="10dp"
-                        android:src="@drawable/video_icon"
-                        android:layout_marginRight="5dp"></ImageView>
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Video"
-                        android:textSize="10dp"
-                        android:fontFamily="@font/poppins_regular"
-                        android:textColor="@color/black"></TextView>
-                </LinearLayout>
-            </LinearLayout>
-            <LinearLayout
-                android:gravity="center"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1">
-                <LinearLayout
-                    android:gravity="center"
-                    android:layout_width="97dp"
-                    android:layout_height="23dp"
-                    android:orientation="horizontal"
-                    android:background="@drawable/input_border">
-                    <ImageView
-                        android:layout_width="10dp"
-                        android:layout_height="10dp"
-                        android:src="@drawable/feeling_icon"
-                        android:layout_marginRight="5dp"></ImageView>
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Feeling"
-                        android:textSize="10dp"
-                        android:fontFamily="@font/poppins_regular"
-                        android:textColor="@color/black"></TextView>
-                </LinearLayout>
-            </LinearLayout>
 
-        </LinearLayout>
-    </LinearLayout>
     <androidx.recyclerview.widget.RecyclerView
-        android:layout_marginTop="160dp"
         android:id="@+id/f_home_rv"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"></androidx.recyclerview.widget.RecyclerView>
+        android:layout_marginTop="55dp"
+        android:padding="18dp"
+        android:layout_height="wrap_content"
+        android:scrollbars="vertical"></androidx.recyclerview.widget.RecyclerView>
 
+    <RelativeLayout
+        android:id="@+id/f_home_addPost"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:background="@drawable/circle_icon_peach"
+        android:layout_gravity="end|bottom"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="80dp"
+        >
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fontFamily="sans-serif"
+            android:gravity="center"
+            android:text="+"
+            android:textColor="@color/white"
+            android:textSize="35sp"></TextView>
+    </RelativeLayout>
 </FrameLayout>

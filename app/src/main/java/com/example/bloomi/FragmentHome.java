@@ -1,5 +1,6 @@
 package com.example.bloomi;
 
+import android.app.Dialog;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -8,7 +9,10 @@ import androidx.fragment.app.FragmentTransaction;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.Window;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
+import android.widget.TextView;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -71,6 +75,41 @@ public class FragmentHome extends Fragment {
                 fragmentTransaction.commit();
             }
         });
+
+        RelativeLayout f_home_addPost = view.findViewById(R.id.f_home_addPost);
+        f_home_addPost.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                dialog_new_post();
+            }
+
+
+        });
+
+        ImageView f_home_notification= view.findViewById(R.id.f_home_notification);
+        f_home_notification.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
+                fragmentTransaction.add(R.id.mainNav_layout, new FragmentNotification());
+                fragmentTransaction.commit();
+            }
+        });
+
         return view;
     }
+    private void dialog_new_post() {
+        Dialog dialogNewPost = new Dialog(getActivity());
+        dialogNewPost.setContentView(R.layout.dialog_new_post);
+        dialogNewPost.getWindow().setBackgroundDrawableResource(android.R.color.transparent);
+
+        // constraintlayout must have
+        Window window = dialogNewPost.getWindow();
+        window.setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+
+
+
+        dialogNewPost.show();
+    }
+
 }

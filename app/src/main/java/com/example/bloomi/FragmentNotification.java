@@ -1,5 +1,6 @@
 package com.example.bloomi;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -7,6 +8,9 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
+
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -59,6 +63,19 @@ public class FragmentNotification extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_notification, container, false);
+        View view = inflater.inflate(R.layout.fragment_notification, container, false);
+        BottomNavigationView navView = getActivity().findViewById(R.id.navView);
+        navView.setVisibility(View.GONE);
+
+        ImageView f_noti_backToHome= view.findViewById(R.id.f_noti_backToHome);
+        f_noti_backToHome.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent backToHomeFromNoti = new Intent(getActivity(), MainNav.class);
+                startActivity(backToHomeFromNoti);
+            }
+        });
+
+        return view;
     }
 }

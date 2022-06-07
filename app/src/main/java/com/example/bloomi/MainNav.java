@@ -42,7 +42,7 @@ public class MainNav extends AppCompatActivity {
                         setFragment(new FragmentGroup());
                         break;
                     case R.id.Nav_Noti:
-                        setFragment(new FragmentNotification());
+                        setFragment(new FragmentMessage());
                         break;
                     case R.id.Nav_Account:
                         setFragment(new FragmentAccount());

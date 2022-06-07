@@ -28,6 +28,18 @@
                 android:fontFamily="@font/fs_playlist"></TextView>
         </LinearLayout>
 
+        <TextView
+            android:id="@+id/LogIn_noticeInvalidAccount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toTopOf="@id/LogIn_EmailLayout"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:layout_marginBottom="5dp"
+            android:textSize="13sp"
+            android:fontFamily="@font/poppins_regular"
+            android:textColor="#FF0000"
+            ></TextView>
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/LogIn_EmailLayout"
             app:layout_constraintTop_toBottomOf="@id/LogIn_AppName"
@@ -90,7 +102,7 @@
             android:layout_marginTop="22dp"
             android:layout_width="wrap_content"
             android:layout_height="27dp"
-            android:textColor="@color/usual_color"
+            android:textColor="@color/white"
             android:text="Forgot Password?"
             android:textSize="15dp"
             android:fontFamily="@font/poppins_medium"
