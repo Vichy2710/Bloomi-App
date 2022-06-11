@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="18dp"
-    tools:context=".FragmentConfirmAccount_ChooseSendingMethod"
+    tools:context=".LogIn.FragmentConfirmAccount_ChooseSendingMethod"
     android:background="@color/white">
 
     <!-- TODO: Update blank fragment layout -->

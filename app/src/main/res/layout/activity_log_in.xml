@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".LogIn"
+    tools:context=".LogIn.LogIn"
     android:background="@drawable/gradient_background"
     >
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -48,11 +48,12 @@
             android:layout_height="65dp"
             app:boxStrokeWidth="0dp"
             app:boxStrokeWidthFocused="0dp"
-            android:textColorHint="@color/white"
+            android:textColorHint="@color/text_black"
+
             >
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/LogIn_Email"
-                android:background="@drawable/input_border"
+                android:background="@drawable/input_border_login"
                 android:paddingLeft="30dp"
                 android:paddingRight="30dp"
                 android:layout_width="match_parent"
@@ -76,11 +77,11 @@
             app:boxStrokeWidth="0dp"
             app:boxStrokeWidthFocused="0dp"
             android:elevation="10dp"
-            android:textColorHint="@color/white"
+            android:textColorHint="@color/text_black"
             >
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/LogIn_Password"
-                android:background="@drawable/input_border"
+                android:background="@drawable/input_border_login"
                 android:paddingLeft="30dp"
                 android:paddingRight="30dp"
                 android:layout_width="match_parent"

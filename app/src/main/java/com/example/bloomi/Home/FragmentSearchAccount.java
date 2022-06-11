@@ -1,4 +1,4 @@
-package com.example.bloomi;
+package com.example.bloomi.Home;
 
 import android.os.Bundle;
 
@@ -13,6 +13,8 @@ import android.view.inputmethod.EditorInfo;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.example.bloomi.R;
 
 /**
  * A simple {@link Fragment} subclass.

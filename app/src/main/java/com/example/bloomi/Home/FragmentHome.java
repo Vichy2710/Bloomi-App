@@ -1,4 +1,4 @@
-package com.example.bloomi;
+package com.example.bloomi.Home;
 
 import android.app.Dialog;
 import android.os.Bundle;
@@ -11,8 +11,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
-import android.widget.TextView;
+
+import com.example.bloomi.FragmentNotification;
+import com.example.bloomi.R;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -80,7 +83,10 @@ public class FragmentHome extends Fragment {
         f_home_addPost.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                dialog_new_post();
+                //dialog_new_post();
+                FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
+                fragmentTransaction.add(R.id.mainNav_layout, new FragmentCreatePost());
+                fragmentTransaction.commit();
             }
 
 
@@ -98,7 +104,7 @@ public class FragmentHome extends Fragment {
 
         return view;
     }
-    private void dialog_new_post() {
+    /*private void dialog_new_post() {
         Dialog dialogNewPost = new Dialog(getActivity());
         dialogNewPost.setContentView(R.layout.dialog_new_post);
         dialogNewPost.getWindow().setBackgroundDrawableResource(android.R.color.transparent);
@@ -107,9 +113,17 @@ public class FragmentHome extends Fragment {
         Window window = dialogNewPost.getWindow();
         window.setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
 
+        LinearLayout d_newPost_addPhoto = dialogNewPost.findViewById(R.id.d_newPost_addPhoto);
+        ImageView d_newPost_image = dialogNewPost.findViewById(R.id.d_newPost_image);
 
+        d_newPost_addPhoto.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+            }
+        });
 
         dialogNewPost.show();
-    }
+    }*/
 
 }

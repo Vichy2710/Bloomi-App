@@ -9,6 +9,9 @@ import android.graphics.Shader;
 import android.os.Bundle;
 import android.widget.TextView;
 
+import com.example.bloomi.LogIn.LogIn;
+import com.example.bloomi.LogIn.SharedPrefManager;
+
 import java.util.Timer;
 import java.util.TimerTask;
 
@@ -23,9 +26,16 @@ public class MainActivity extends AppCompatActivity {
         time.schedule(new TimerTask() {
             @Override
             public void run() {
-                Intent go_to_signup = new Intent(MainActivity.this, LogIn.class);
-                startActivity(go_to_signup);
-                finish();
+                if(SharedPrefManager.getInstance(MainActivity.this).isLoggedIn()){
+                    Intent go_to_signup = new Intent(MainActivity.this, MainNav.class);
+                    startActivity(go_to_signup);
+                    finish();
+                }
+                else{
+                    Intent go_to_signup = new Intent(MainActivity.this, LogIn.class);
+                    startActivity(go_to_signup);
+                    finish();
+            }
             }
         }, 3000);
         TextView bloomi = new TextView(this);

@@ -1,4 +1,4 @@
-package com.example.bloomi;
+package com.example.bloomi.LogIn;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentTransaction;
@@ -17,7 +17,6 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -25,8 +24,9 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
-import com.example.bloomi.API.IAPIService;
 import com.example.bloomi.Detail.auth_controller.Account;
+import com.example.bloomi.MainNav;
+import com.example.bloomi.R;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -34,12 +34,10 @@ import org.json.JSONObject;
 import java.util.HashMap;
 import java.util.Map;
 
-import retrofit2.Call;
-import retrofit2.Callback;
-
 public class LogIn extends AppCompatActivity {
 
     String url = "https://bloomi.herokuapp.com/api/v1/auth/signin";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -61,12 +59,9 @@ public class LogIn extends AppCompatActivity {
                 com.google.android.material.textfield.TextInputEditText LogIn_Email = findViewById(R.id.LogIn_Email);
                 com.google.android.material.textfield.TextInputEditText LogIn_Password = findViewById(R.id.LogIn_Password);
 
-                //
-                Intent goToHomeFromLogIn = new Intent(LogIn.this, MainNav.class);
-                startActivity(goToHomeFromLogIn);
                 //postAccount(LogIn_Email.getText().toString().trim(), LogIn_Password.getText().toString().trim());
 
-                //PostData(LogIn_Email.getText().toString().trim(), LogIn_Password.getText().toString().trim());
+                PostData(LogIn_Email.getText().toString().trim(), LogIn_Password.getText().toString().trim());
 
             }
         });
@@ -124,72 +119,64 @@ public class LogIn extends AppCompatActivity {
         dialogLogIn.show();
     }
 
-    /*private void PostData(String email, String password){
-
+    private void PostData(String email, String password) {
         RequestQueue requestQueue = Volley.newRequestQueue(LogIn.this);
         StringRequest jsonObjectRequest = new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
                 {
+                    try {
+                        JSONObject jsonObject = new JSONObject(response);
+                        if (!jsonObject.equals("SUCCESS")) {
+                            JSONObject userJson = jsonObject.getJSONObject("data");
+                            Account account = new Account(email, password, userJson.getString("jwt"), userJson.getInt("accountId"));
 
-                    JSONObject jsonObject = null;
-                    try {
-                        jsonObject = new JSONObject(response);
-                    } catch (JSONException e) {
-                        e.printStackTrace();
-                    }
-                    try {
-                        String status = jsonObject.getString("status");
-                        if(status.equals("SUCCESS")){
                             Intent goToHomeFromLogIn = new Intent(LogIn.this, MainNav.class);
-                            *//*Bundle sendAccountDetailToHome = new Bundle();
-                            sendAccountDetailToHome.putSerializable("account_login", a);
-                            goToHomeFromLogIn.putExtras(sendAccountDetailToHome);*//*
+                            Bundle sendAccountDetailToHome = new Bundle();
+                            sendAccountDetailToHome.putSerializable("account_login", account);
+                            goToHomeFromLogIn.putExtras(sendAccountDetailToHome);
                             startActivity(goToHomeFromLogIn);
-                        }
-                        else{
-                            TextView LogIn_noticeInvalidAccount = findViewById(R.id.LogIn_noticeInvalidAccount);
 
-                            CountDownTimer timer = new CountDownTimer(3000, 1000) {
-
-                                @Override
-                                public void onTick(long millisUntilFinished) {
-                                    LogIn_noticeInvalidAccount.setText("Wrong email or password");
-                                    LogIn_noticeInvalidAccount.setVisibility(View.VISIBLE);
-                                }
-
-                                @Override
-                                public void onFinish() {
-                                    LogIn_noticeInvalidAccount.setText("");
-                                    LogIn_noticeInvalidAccount.setVisibility(View.INVISIBLE); //(or GONE)
-                                }
-                            }.start();
                         }
                     } catch (JSONException e) {
                         e.printStackTrace();
                     }
                 }
-                }
+            }
 
-        } , new com.android.volley.Response.ErrorListener() {
+        }, new com.android.volley.Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-                Toast.makeText(LogIn.this,"ko dc",Toast.LENGTH_SHORT).show();
+
+                TextView LogIn_noticeInvalidAccount = findViewById(R.id.LogIn_noticeInvalidAccount);
+                CountDownTimer timer = new CountDownTimer(3000, 1000) {
+                    @Override
+                    public void onTick(long millisUntilFinished) {
+                        LogIn_noticeInvalidAccount.setText("Wrong email or password");
+                        LogIn_noticeInvalidAccount.setVisibility(View.VISIBLE);
+                    }
+
+                    @Override
+                    public void onFinish() {
+                        LogIn_noticeInvalidAccount.setText("");
+                        LogIn_noticeInvalidAccount.setVisibility(View.INVISIBLE); //(or GONE)
+                    }
+                }.start();
             }
-        }){
+        }) {
             @Override
             protected Map<String, String> getParams() {
                 Map<String, String> param = new HashMap<>();
 
-                param.put("emailOrPhone",email);
-                param.put("password",password);
+                param.put("emailOrPhone", email.toLowerCase());
+                param.put("password", password);
 
                 return param;
             }
         };
 
         requestQueue.add(jsonObjectRequest);
-    }*/
+    }
 
     /*@Override
     public String getBodyContentType() {

@@ -1,4 +1,4 @@
-package com.example.bloomi;
+package com.example.bloomi.LogIn;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -12,6 +12,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.example.bloomi.MainNav;
+import com.example.bloomi.R;
 
 /**
  * A simple {@link Fragment} subclass.

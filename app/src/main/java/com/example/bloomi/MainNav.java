@@ -7,18 +7,15 @@ import androidx.fragment.app.Fragment;
 import android.content.Context;
 import android.graphics.Rect;
 import android.os.Bundle;
-import android.text.SpannableString;
-import android.text.style.UnderlineSpan;
 import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 
+import com.example.bloomi.Home.FragmentHome;
 import com.example.bloomi.databinding.ActivityMainNavBinding;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-
-import java.util.Objects;
 
 public class MainNav extends AppCompatActivity {
     ActivityMainNavBinding binding;

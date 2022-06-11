@@ -10,9 +10,11 @@
         <entry key="..\:/HIT/ANDROID/BTL/app/src/main/res/drawable/boder_line_top_bot.xml" value="0.26614583333333336" />
         <entry key="..\:/HIT/ANDROID/BTL/app/src/main/res/drawable/border_line_top_bot_header.xml" value="0.2" />
         <entry key="..\:/HIT/ANDROID/BTL/app/src/main/res/drawable/border_line_top_bot_rv_account.xml" value="0.26614583333333336" />
+        <entry key="..\:/HIT/ANDROID/BTL/app/src/main/res/drawable/button_add_image.xml" value="0.26614583333333336" />
         <entry key="..\:/HIT/ANDROID/BTL/app/src/main/res/drawable/cancel_search_button.xml" value="0.26614583333333336" />
         <entry key="..\:/HIT/ANDROID/BTL/app/src/main/res/drawable/circle_icon_peach.xml" value="0.26614583333333336" />
         <entry key="..\:/HIT/ANDROID/BTL/app/src/main/res/drawable/circle_icon_white.xml" value="0.26614583333333336" />
+        <entry key="..\:/HIT/ANDROID/BTL/app/src/main/res/drawable/circle_square_button.xml" value="0.26614583333333336" />
         <entry key="..\:/HIT/ANDROID/BTL/app/src/main/res/drawable/custom_heart.xml" value="0.26614583333333336" />
         <entry key="..\:/HIT/ANDROID/BTL/app/src/main/res/drawable/custom_nav_account.xml" value="0.26614583333333336" />
         <entry key="..\:/HIT/ANDROID/BTL/app/src/main/res/drawable/custom_nav_group.xml" value="0.26614583333333336" />
@@ -30,18 +32,22 @@
         <entry key="..\:/HIT/ANDROID/BTL/app/src/main/res/drawable/ichome_white.xml" value="0.26614583333333336" />
         <entry key="..\:/HIT/ANDROID/BTL/app/src/main/res/drawable/icnoti_purple.xml" value="0.26614583333333336" />
         <entry key="..\:/HIT/ANDROID/BTL/app/src/main/res/drawable/input_border.xml" value="0.26614583333333336" />
+        <entry key="..\:/HIT/ANDROID/BTL/app/src/main/res/drawable/input_border_login.xml" value="0.26614583333333336" />
         <entry key="..\:/HIT/ANDROID/BTL/app/src/main/res/drawable/input_search_border.xml" value="0.26614583333333336" />
         <entry key="..\:/HIT/ANDROID/BTL/app/src/main/res/drawable/layout_one_post.xml" value="0.26614583333333336" />
         <entry key="..\:/HIT/ANDROID/BTL/app/src/main/res/layout/activity_log_in.xml" value="0.18840579710144928" />
         <entry key="..\:/HIT/ANDROID/BTL/app/src/main/res/layout/activity_main.xml" value="0.1852355072463768" />
         <entry key="..\:/HIT/ANDROID/BTL/app/src/main/res/layout/activity_main_nav.xml" value="0.1" />
         <entry key="..\:/HIT/ANDROID/BTL/app/src/main/res/layout/activity_sign_up.xml" value="0.25" />
+        <entry key="..\:/HIT/ANDROID/BTL/app/src/main/res/layout/dialog_choose_privacy.xml" value="0.25" />
+        <entry key="..\:/HIT/ANDROID/BTL/app/src/main/res/layout/dialog_choose_storage.xml" value="0.25" />
         <entry key="..\:/HIT/ANDROID/BTL/app/src/main/res/layout/dialog_forgot_password.xml" value="0.18840579710144928" />
         <entry key="..\:/HIT/ANDROID/BTL/app/src/main/res/layout/dialog_forgot_password_enter_code.xml" value="0.25" />
         <entry key="..\:/HIT/ANDROID/BTL/app/src/main/res/layout/dialog_new_post.xml" value="0.25" />
         <entry key="..\:/HIT/ANDROID/BTL/app/src/main/res/layout/fragment_account.xml" value="0.25" />
         <entry key="..\:/HIT/ANDROID/BTL/app/src/main/res/layout/fragment_confirm_account__choose_sending_method.xml" value="0.25" />
         <entry key="..\:/HIT/ANDROID/BTL/app/src/main/res/layout/fragment_confirm_account__set_password.xml" value="0.25" />
+        <entry key="..\:/HIT/ANDROID/BTL/app/src/main/res/layout/fragment_create_post.xml" value="0.25" />
         <entry key="..\:/HIT/ANDROID/BTL/app/src/main/res/layout/fragment_forgot_password.xml" value="0.18840579710144928" />
         <entry key="..\:/HIT/ANDROID/BTL/app/src/main/res/layout/fragment_forgot_password__set_password.xml" value="0.2359375" />
         <entry key="..\:/HIT/ANDROID/BTL/app/src/main/res/layout/fragment_group.xml" value="0.25" />
@@ -53,7 +59,7 @@
         <entry key="..\:/HIT/ANDROID/BTL/app/src/main/res/layout/fragment_search_account_research.xml" value="0.25" />
         <entry key="..\:/HIT/ANDROID/BTL/app/src/main/res/layout/fragment_search_account_result.xml" value="0.16510416666666666" />
         <entry key="..\:/HIT/ANDROID/BTL/app/src/main/res/layout/one_noti.xml" value="0.4" />
-        <entry key="..\:/HIT/ANDROID/BTL/app/src/main/res/layout/one_post.xml" value="0.2" />
+        <entry key="..\:/HIT/ANDROID/BTL/app/src/main/res/layout/one_post.xml" value="0.264" />
         <entry key="..\:/HIT/ANDROID/BTL/app/src/main/res/layout/re_search_account.xml" value="0.25" />
         <entry key="..\:/HIT/ANDROID/BTL/app/src/main/res/layout/rv_account_search.xml" value="0.25" />
         <entry key="..\:/HIT/ANDROID/BTL/app/src/main/res/layout/rv_search_account.xml" value="0.25" />
