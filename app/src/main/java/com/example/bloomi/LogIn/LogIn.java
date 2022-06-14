@@ -185,10 +185,10 @@ public class LogIn extends AppCompatActivity {
     /*private void postAccount(String email, String password) {
 
 
-        IAPIService.apiService.postAccountSignIn(email, password).enqueue(new Callback<Account>() {
+        IAPIService.apiService.postAccountSignIn(email, password).enqueue(new Callback<com.example.bloomi.Account>() {
             @Override
-            public void onResponse(Call<Account> call, Response<Account> response) {
-                Account result = response.body();
+            public void onResponse(Call<com.example.bloomi.Account> call, Response<com.example.bloomi.Account> response) {
+                com.example.bloomi.Account result = response.body();
                 if(result.getStatus().equals("SUCCESS")){
                     Intent goToHomeFromLogIn = new Intent(LogIn.this, MainNav.class);
                     startActivity(goToHomeFromLogIn);
@@ -200,7 +200,7 @@ public class LogIn extends AppCompatActivity {
             }
 
             @Override
-            public void onFailure(Call<Account> call, Throwable t) {
+            public void onFailure(Call<com.example.bloomi.Account> call, Throwable t) {
                 Toast.makeText(LogIn.this,"ko dc",Toast.LENGTH_SHORT).show();
 
             }

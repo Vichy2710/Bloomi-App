@@ -1,4 +1,4 @@
-package com.example.bloomi;
+package com.example.bloomi.Account;
 
 import android.os.Bundle;
 
@@ -8,12 +8,14 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.bloomi.R;
+
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link FragmentMessage#newInstance} factory method to
+ * Use the {@link FragmentAccountMe#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class FragmentMessage extends Fragment {
+public class FragmentAccountMe extends Fragment {
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -24,7 +26,7 @@ public class FragmentMessage extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    public FragmentMessage() {
+    public FragmentAccountMe() {
         // Required empty public constructor
     }
 
@@ -34,11 +36,11 @@ public class FragmentMessage extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment FragmentMessage.
+     * @return A new instance of fragment FragmentAccount.
      */
     // TODO: Rename and change types and number of parameters
-    public static FragmentMessage newInstance(String param1, String param2) {
-        FragmentMessage fragment = new FragmentMessage();
+    public static FragmentAccountMe newInstance(String param1, String param2) {
+        FragmentAccountMe fragment = new FragmentAccountMe();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -59,6 +61,6 @@ public class FragmentMessage extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_message, container, false);
+        return inflater.inflate(R.layout.fragment_account_me, container, false);
     }
 }

@@ -63,11 +63,12 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         >
+
         <TextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_gravity="center_horizontal"
-            android:background="@color/usual_color"/>
+            android:background="@color/usual_color" />
     </RelativeLayout>
 
     <androidx.recyclerview.widget.RecyclerView
@@ -87,7 +88,7 @@
         android:background="@drawable/circle_icon_peach"
         android:layout_gravity="end|bottom"
         android:layout_marginEnd="20dp"
-        android:layout_marginBottom="80dp"
+        android:layout_marginBottom="20dp"
         >
 
         <TextView
@@ -97,6 +98,6 @@
             android:gravity="center"
             android:text="+"
             android:textColor="@color/white"
-            android:textSize="35sp"/>
+            android:textSize="35sp" />
     </RelativeLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

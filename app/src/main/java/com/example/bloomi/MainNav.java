@@ -13,7 +13,9 @@ import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 
+import com.example.bloomi.Account.FragmentAccountMe;
 import com.example.bloomi.Home.FragmentHome;
+import com.example.bloomi.Message.FragmentMessage;
 import com.example.bloomi.databinding.ActivityMainNavBinding;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
@@ -38,11 +40,11 @@ public class MainNav extends AppCompatActivity {
                     case R.id.Nav_Group:
                         setFragment(new FragmentGroup());
                         break;
-                    case R.id.Nav_Noti:
+                    case R.id.Nav_Message:
                         setFragment(new FragmentMessage());
                         break;
                     case R.id.Nav_Account:
-                        setFragment(new FragmentAccount());
+                        setFragment(new FragmentAccountMe());
                         break;
                 }
 
