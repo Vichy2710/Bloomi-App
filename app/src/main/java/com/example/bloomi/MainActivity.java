@@ -1,23 +1,28 @@
 package com.example.bloomi;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.LinearGradient;
 import android.graphics.Shader;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.TextView;
 
-import com.example.bloomi.LogIn.LogIn;
-import com.example.bloomi.LogIn.SharedPrefManager;
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.bloomi.Login.LogIn;
+import com.example.bloomi.Login.SharedPrefManager;
+import com.example.bloomi.Login.User_login;
+import com.example.bloomi.homePage.MainNav;
 
 import java.util.Timer;
 import java.util.TimerTask;
 
 public class MainActivity extends AppCompatActivity {
 
+
     Timer time;
+    public static User_login user_login;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,16 +31,18 @@ public class MainActivity extends AppCompatActivity {
         time.schedule(new TimerTask() {
             @Override
             public void run() {
+                //SharedPrefManager.getInstance(MainActivity.this).logout();
                 if(SharedPrefManager.getInstance(MainActivity.this).isLoggedIn()){
+                    user_login=SharedPrefManager.getInstance(MainActivity.this).getUser();
                     Intent go_to_signup = new Intent(MainActivity.this, MainNav.class);
                     startActivity(go_to_signup);
                     finish();
                 }
-                else{
+                else {
                     Intent go_to_signup = new Intent(MainActivity.this, LogIn.class);
                     startActivity(go_to_signup);
                     finish();
-            }
+                }
             }
         }, 3000);
         TextView bloomi = new TextView(this);
@@ -44,4 +51,6 @@ public class MainActivity extends AppCompatActivity {
                 new float[]{0, 1}, Shader.TileMode.CLAMP);
         bloomi.getPaint().setShader(textShader);
     }
+    View t;
+
 }

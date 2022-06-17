@@ -11,7 +11,7 @@
         android:icon="@drawable/custom_nav_group"
         ></item>
     <item
-        android:id="@+id/Nav_Message"
+        android:id="@+id/Nav_message"
         android:title=""
         android:icon="@drawable/custom_nav_message"
         ></item>

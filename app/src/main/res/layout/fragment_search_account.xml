@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Home.FragmentSearchAccount"
+    tools:context=".SearchAccount.FragmentSearchAccount"
     android:background="@color/white">
 
     <!-- TODO: Update blank fragment layout -->
@@ -26,49 +26,49 @@
             android:clickable="true"
             android:focusableInTouchMode="true"
             android:fontFamily="@font/poppins_regular"
-            android:hint="Search"
-            android:textColorHint="@color/white"
-            android:textColor="@color/text_black"
+            android:hint="@string/search"
             android:imeActionLabel="Search"
             android:imeOptions="actionSearch"
             android:inputType="text|textNoSuggestions"
-            android:paddingLeft="40dp"
-            android:paddingRight="10dp"
+            android:paddingStart="40dp"
+            android:paddingEnd="10dp"
             android:singleLine="true"
+            android:textColor="@color/text_black"
+            android:textColorHint="@color/white"
             android:textCursorDrawable="@null"
-            android:textSize="15dp" />
+            android:textSize="15sp"
+            android:focusable="true" />
 
         <ImageView
             android:layout_width="25dp"
             android:layout_height="25dp"
             android:layout_centerVertical="true"
-            android:layout_marginLeft="7dp"
-            android:src="@drawable/ic_baseline_search_24_white">
-
-        </ImageView>
+            android:layout_marginStart="7dp"
+            android:contentDescription="@string/todo"
+            android:src="@drawable/ic_baseline_search_24_white" />
         <ImageView
             android:id="@+id/f_SearchAccount_clearInput"
             android:layout_width="20dp"
             android:layout_height="20dp"
             android:src="@drawable/ic_baseline_cancel_24"
             android:layout_centerVertical="true"
-            android:layout_marginLeft="240dp"
+            android:layout_marginStart="240dp"
             android:visibility="gone"
-            ></ImageView>
+            />
 
         <TextView
             android:id="@+id/f_SearchAccount_cancelToHome"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:layout_centerVertical="true"
-            android:layout_marginLeft="290dp"
+            android:layout_marginStart="290dp"
             android:fontFamily="@font/poppins_regular"
             android:padding="5dp"
-            android:text="Cancel"
+            android:text="@string/cancel"
             android:textColor="@color/white"
-            android:textSize="15dp"
+            android:textSize="15sp"
 
-            ></TextView>
+            />
     </RelativeLayout>
 
 </FrameLayout>

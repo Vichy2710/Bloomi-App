@@ -10,6 +10,5 @@
     <color name="usual_color">#F7797D</color>
     <color name="text_black">#212121</color>
     <color name="light_gray">#F5F7FA</color>
-    <color name="light_pink">#FFE6E5</color>
-    <color name="text_gray">#717171</color>
+    <color name="light_pink">#FFECEB</color>
 </resources>

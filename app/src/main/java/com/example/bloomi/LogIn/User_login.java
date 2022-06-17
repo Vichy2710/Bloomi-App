@@ -1,12 +1,10 @@
-package com.example.bloomi.LogIn;
+package com.example.bloomi.Login;
 
 import com.example.bloomi.uses_manage;
 
 public class User_login {
     String jwt;
     uses_manage Accout;
-
-
     public String getJwt() {
         return jwt;
     }
