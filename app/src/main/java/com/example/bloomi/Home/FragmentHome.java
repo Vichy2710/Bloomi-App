@@ -1,21 +1,24 @@
 package com.example.bloomi.Home;
 
-import android.app.Dialog;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.Window;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 
-import com.example.bloomi.FragmentNotification;
+import com.example.bloomi.Adapter.PostAdapter;
+import com.example.bloomi.Notification.FragmentNotification;
 import com.example.bloomi.R;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -101,6 +104,18 @@ public class FragmentHome extends Fragment {
                 fragmentTransaction.commit();
             }
         });
+
+        String avatar = null;
+        String userName = null;
+
+        List<OnePost> posts = new ArrayList<>();
+        RecyclerView recyclerView = view.findViewById(R.id.f_home_rv);
+        PostAdapter postAdapter;
+
+        postAdapter = new PostAdapter(getContext(), posts, avatar, userName);
+        LinearLayoutManager linearLayoutManager =new LinearLayoutManager(getContext(), RecyclerView.VERTICAL, false);
+        recyclerView.setAdapter(postAdapter);
+        recyclerView.setLayoutManager(linearLayoutManager);
 
         return view;
     }

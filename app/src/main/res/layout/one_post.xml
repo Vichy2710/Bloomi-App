@@ -29,7 +29,7 @@
                     android:layout_height="45dp"
                     android:layout_gravity="center"
                     android:layout_marginRight="16dp"
-                    android:src="@color/black"></de.hdodenhof.circleimageview.CircleImageView>
+                    android:src="@color/black"/>
                 <TextView
                     android:id="@+id/onePost_name"
                     android:layout_width="250dp"
@@ -39,15 +39,15 @@
                     android:textSize="15sp"
                     android:fontFamily="@font/poppins_regular"
                     android:textColor="@color/black"
-                    ></TextView>
+                   />
 
-                <ImageView
+                <!--<ImageView
                     android:id="@+id/onePost_feeling"
                     android:layout_width="30dp"
                     android:layout_height="30dp"
                     android:layout_gravity="center_vertical"
                     android:src="@drawable/feeling_angry"
-                    ></ImageView>
+                    />-->
             </LinearLayout>
             <LinearLayout
                 android:layout_width="match_parent"
@@ -60,17 +60,17 @@
                     android:text="ngo trieu vi"
                     android:textSize="15sp"
                     android:textColor="@color/text_black"
-                    android:fontFamily="@font/poppins_regular"></TextView>
+                    android:fontFamily="@font/poppins_regular"/>
 
                 <ImageView
                     android:id="@+id/onePost_image"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/photo_icon"></ImageView>
+                    android:src="@drawable/photo_icon"/>
             </LinearLayout>
             <Space
                 android:layout_width="match_parent"
-                android:layout_height="10dp"></Space>
+                android:layout_height="10dp"/>
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="20dp"
@@ -83,10 +83,10 @@
                         android:id="@+id/onePost_heartOrNot"
                         android:layout_width="20dp"
                         android:layout_height="20dp"
-                        android:src="@drawable/custom_heart"></ImageView>
+                        android:src="@drawable/custom_heart"/>
                     <Space
                         android:layout_width="7dp"
-                        android:layout_height="match_parent"></Space>
+                        android:layout_height="match_parent"/>
                     <TextView
                         android:id="@+id/onePost_countHeart"
                         android:layout_width="30dp"
@@ -95,11 +95,11 @@
                         android:textSize="15sp"
                         android:textColor="@color/text_black"
                         android:fontFamily="@font/poppins_regular"
-                        ></TextView>
+                        />
                 </LinearLayout>
                 <Space
                     android:layout_width="30dp"
-                    android:layout_height="match_parent"></Space>
+                    android:layout_height="match_parent"/>
                 <LinearLayout
                     android:layout_width="40dp"
                     android:layout_height="match_parent"
@@ -108,7 +108,7 @@
                         android:id="@+id/onePost_comment"
                         android:layout_width="20dp"
                         android:layout_height="20dp"
-                        android:src="@drawable/icon_comment"></ImageView>
+                        android:src="@drawable/icon_comment"/>
 
                 </LinearLayout>
             </LinearLayout>
