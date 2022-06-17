@@ -12,6 +12,10 @@ public class OnePost {
         this.likes = likes;
     }
 
+    public OnePost(String content) {
+        this.content=content;
+    }
+
     public String getContent() {
         return content;
     }

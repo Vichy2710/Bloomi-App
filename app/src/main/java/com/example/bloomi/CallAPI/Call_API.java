@@ -19,10 +19,12 @@ import com.example.bloomi.Login.SharedPrefManager;
 import com.example.bloomi.Login.User_login;
 import com.example.bloomi.Register.User;
 import com.example.bloomi.homePage.MainNav;
+import com.example.bloomi.post_Bloom.OnePost;
 import com.example.bloomi.post_Bloom.oneNewPost;
 import com.example.bloomi.uses_manage;
 
 
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -30,7 +32,9 @@ import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.ObjectOutputStream;
 import java.io.UnsupportedEncodingException;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class Call_API {
@@ -52,8 +56,8 @@ public class Call_API {
             public void onResponse(String response) {
                 try {
                     JSONObject jsonObject= new JSONObject(response);
-                    System.out.println("NGuyenVanDat");
-                    System.out.println(response);
+//                    System.out.println("NGuyenVanDat");
+//                    System.out.println(response);
                     if(jsonObject.getString("status").equals("SUCCESS"))
                     {
                         Toast.makeText(context,"successful registration",Toast.LENGTH_SHORT).show();
@@ -180,9 +184,56 @@ public class Call_API {
                param.put("displayMode",newPost.getDisplayMode()+"");
                return param;
             }
-
-
         };
        requestQueue.add(jsonArrayRequest);
+    }
+    public void call_Api_Get_Post(int ID ,List<OnePost> listdata)
+    {
+        String Url_get_Post="http://bloomi.eba-u3ypmzpm.us-east-1.elasticbeanstalk.com/api/v1/post/";
+        //System.out.println("---------------------------");
+        RequestQueue requestQueue=Volley.newRequestQueue(context);
+        StringRequest jsonArrayRequest=new StringRequest(Request.Method.GET, Url_get_Post+ID, new Response.Listener<String>() {
+            @Override
+            public void onResponse(String response) {
+                try {
+                    JSONObject  jsonObject = new JSONObject(response);
+
+
+                    if(!jsonObject.getString("status").equals("SUCCESS"))
+                    {
+                        Toast.makeText(context, "No POST", Toast.LENGTH_SHORT).show();
+                    }
+                    else
+                    {   // lay mang data
+                        JSONArray jsonArray=jsonObject.getJSONArray("data");
+                        // tao list chua magn
+                        for(int i=0;i<jsonArray.length();i++)
+                        {
+                            OnePost onePost=new OnePost(jsonArray.getJSONObject(i).getString("content"));
+                            System.out.println(onePost.getContent());
+                            listdata.add(onePost);
+                           // System.out.println(jsonArray.getJSONObject(i).getString("content"));
+                        }
+
+                       // System.out.println(listdata);
+                    }
+
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                Toast.makeText(context,error.getMessage(),Toast.LENGTH_SHORT).show();
+            }
+        }){
+            @Override
+            public Priority getPriority() {
+                return Priority.IMMEDIATE;
+            }
+        };
+        requestQueue.add(jsonArrayRequest);
     }
 }

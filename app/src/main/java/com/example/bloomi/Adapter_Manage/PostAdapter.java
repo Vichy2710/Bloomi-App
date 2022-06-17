@@ -8,6 +8,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.fragment.app.FragmentActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.bloomi.R;
@@ -21,35 +22,34 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.ViewHolder> {
     Context context;
     String avatar;
     String userName;
-    public PostAdapter(Context context, List<OnePost> posts, String avatar, String userName){
+    public PostAdapter(Context context, List<OnePost> posts, String userName){
         this.context=context;
         this.posts=posts;
-        this.avatar=avatar;
         this.userName=userName;
     }
+
+
 
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.one_post, parent, false);
-
         return new ViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         OnePost onePost = posts.get(position);
-
         holder.name.setText(userName);
-        Picasso.get().load(avatar).into(holder.avt);
-        Picasso.get().load(onePost.getImage()).into(holder.image);
+//        Picasso.get().load(avatar).into(holder.avt);
+//        Picasso.get().load(onePost.getImage()).into(holder.image);
         holder.content.setText(onePost.getContent());
 
     }
 
     @Override
     public int getItemCount() {
-        return posts.size();
+        return posts.isEmpty()?0: posts.size();
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
@@ -59,7 +59,7 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.ViewHolder> {
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             avt=itemView.findViewById(R.id.onePost_avt);
-            image=itemView.findViewById(R.id.onePost_name);
+           // image=itemView.findViewById(R.id.onePost_name);
             content=itemView.findViewById(R.id.onePost_content);
             name=itemView.findViewById(R.id.onePost_name);
         }

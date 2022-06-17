@@ -17,6 +17,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.bloomi.CallAPI.Call_API;
 import com.example.bloomi.R;
@@ -24,6 +25,8 @@ import com.example.bloomi.Register.MainActivity_Resgiter;
 import com.example.bloomi.homePage.MainNav;
 
 import org.json.JSONException;
+
+import java.util.regex.Pattern;
 
 public class LogIn extends AppCompatActivity {
     Call_API login=new Call_API(LogIn.this);
@@ -46,6 +49,12 @@ public class LogIn extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 try {
+                    final Pattern emailPattern = Pattern.compile("^[\\w-\\.]+@([\\w-]+\\.)+[\\w-]{2,4}$");
+                    if(!emailPattern.matcher(mailOrPhone.getText().toString().trim()).matches()){
+                        Toast.makeText(getBaseContext(),"Invalid email",Toast.LENGTH_SHORT).show();
+
+                    }
+                    else
                     login.callAPISignIn(mailOrPhone.getText().toString(),password.getText().toString());
                 } catch (JSONException e) {
                     e.printStackTrace();
